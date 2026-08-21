@@ -1,31 +1,33 @@
 #include <stdio.h>
 
-int main()
-{
-    // taking input from user
-   int n=0;
-   printf("enter size of array: ");
-   scanf("%d",&n);
-   
-   int arr[n];
-   printf("enter element of array: ");
-   for(int i=0;i<n;i++)
-   scanf("%d",&arr[i]);
-
-  // linear search algorithm
-  int temp;
-  for(int i=1;i<n;i++){
-  
-      int temp=arr[i];
-         int j;
-      for(j=i-1;j>=0 && arr[j]>temp;j--){
-          arr[j+1]=arr[j];
-      }
-        arr[j+1]=temp;
-      }
-   // printing sorted array
-  printf("sorted array: ");
-  for(int i=0;i<n;i++)
-  printf("%d ",arr[i]);
+int main(){
+    int n;
+    printf("enter size of array:");
+    scanf("%d",&n);
+    
+    int key;
+    printf("enter element to find:");
+     scanf("%d",&key);
+     
+    int arr[n];
+    
+    printf("enter array elements:");
+    for(int i=0; i<n;i++)
+     scanf("%d",&arr[i]);
+     
+     int ans =0;
+     
+    for(int i=0; i<n;i++)
+    {
+        if(arr[i]==key){
+            printf("element found at index %d",i);
+            ans=1;
+            break;
+        }
+    }
+    if (ans==0){
+       printf("element not found "); 
+    }
     return 0;
+     
 }
